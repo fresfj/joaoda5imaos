@@ -4,7 +4,7 @@
 
 - Public name: João da 5 Irmãos.
 - Civil name: João Carlos Rodrigues.
-- Office: Deputado Federal, Paraná / BR.
+- Office: Deputado Federal, Paraná.
 - Election: 2026.
 - Number: 1599.
 - Party: Movimento Democrático Brasileiro (MDB).

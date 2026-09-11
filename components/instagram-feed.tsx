@@ -2,6 +2,7 @@
 
 import Script from 'next/script';
 import { Instagram } from 'lucide-react';
+import { useEffect } from 'react';
 import type { InstagramPost } from '../lib/instagram';
 import { campaign } from '../lib/campaign';
 
@@ -11,6 +12,12 @@ declare global {
 
 export function InstagramFeed({ posts }: { posts: InstagramPost[] }) {
   const permalinks = posts.length ? posts.map((post) => post.permalink) : [campaign.instagram];
+  const embedKey = permalinks.join('|');
+
+  useEffect(() => {
+    window.instgrm?.Embeds?.process();
+  }, [embedKey]);
+
   return <>
     <div className={`instagram-grid ${posts.length ? '' : 'profile-only'}`}>
       {permalinks.map((permalink) => <blockquote

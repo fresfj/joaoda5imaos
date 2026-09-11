@@ -9,7 +9,7 @@ export function SiteFooter() {
     <div className="footer-brand">
       <BrandMark />
       <b className="footer-number">1599</b>
-      <span className="footer-office">Deputado Federal<br />Paraná / BR</span>
+      <span className="footer-office">Deputado Federal<br />Paraná</span>
       <Image className="mdb-logo" src={mdb} alt="MDB, Movimento Democrático Brasileiro" width={100} sizes="100px" />
     </div>
     <div className="footer-nav" aria-label="Links do rodapé">

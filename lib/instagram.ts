@@ -9,11 +9,22 @@ type InstagramApiResponse = {
   data?: InstagramPost[];
 };
 
+const instagramPostPattern = /https:\/\/www\.instagram\.com\/(?:p|reel|tv)\/[A-Za-z0-9_-]+\/?/g;
+
+const normalizeInstagramPermalink = (value: string) => {
+  const [withoutQuery] = value.trim().split(/[?#]/);
+  const match = withoutQuery.match(instagramPostPattern);
+  const permalink = match?.[0];
+
+  if (!permalink) return null;
+  return permalink.endsWith('/') ? permalink : `${permalink}/`;
+};
+
 const fallbackPermalinks = () =>
   (process.env.INSTAGRAM_POST_URLS ?? '')
     .split(',')
-    .map((url) => url.trim())
-    .filter((url) => url.startsWith('https://www.instagram.com/'))
+    .map(normalizeInstagramPermalink)
+    .filter((url): url is string => Boolean(url))
     .slice(0, 6)
     .map((permalink, index) => ({ id: `fallback-${index}`, permalink }));
 
