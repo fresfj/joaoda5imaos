@@ -4,6 +4,7 @@ import portrait from '../../imgs/joao-retrato.jpg';
 import { PageShell } from '../../components/page-shell';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/quem-e-joao' },
   title: 'Quem é João da 5 Irmãos | Trajetória',
   description: 'Conheça a trajetória de João Carlos Rodrigues, o João da 5 Irmãos: comerciante, vereador de Curitiba licenciado e candidato a deputado federal pelo Paraná.',
 };

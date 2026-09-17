@@ -12,6 +12,9 @@ import { InstagramFeed } from '../components/instagram-feed';
 import { campaign } from '../lib/campaign';
 import { actionMedia } from '../lib/actions';
 import { getInstagramPosts } from '../lib/instagram';
+import { NewsletterSection } from '../components/newsletter-section';
+
+export const metadata = { alternates: { canonical: '/' } };
 
 const identityItems = [
   { text: 'FÉ. FAMÍLIA. TRABALHO.' },
@@ -41,10 +44,10 @@ export default async function Home() {
         <div className="hero-photo"><Image src={portrait} alt="João da 5 Irmãos sorrindo" fill preload sizes="(max-width: 700px) 100vw, 65vw" /></div>
         <div className="hero-wash" />
         <div className="hero-content wrap">
-          <p className="eyebrow">Eleições 2026 · Deputado Federal · Paraná</p>
+          <p className="eyebrow">Eleições 2026 · Candidato a deputado federal · Paraná</p>
           <h1>JOÃO<span>DA <b>5 IRMÃOS</b></span></h1>
           <div className="ballot" aria-label="Número 1599">1599</div>
-          <p className="hero-caption">Deputado Federal <span>Paraná · MDB</span></p>
+          <p className="hero-caption">Candidato a deputado federal <span>Paraná · MDB</span></p>
           <p className="hero-copy">Uma história que começa no bairro.<br />Um compromisso com o Paraná.</p>
           <Link className="button" href="/contato"><MessageCircle size={21} /> Fale com a campanha <ArrowUpRight size={20} /></Link>
           <Link className="discover" href="/quem-e-joao">Conheça a história de João <ArrowDown size={18} /></Link>
@@ -54,7 +57,7 @@ export default async function Home() {
         <div className="identity-track"><IdentityGroup /><IdentityGroup hidden /></div>
       </div>
       <section className="section wrap history">
-        <div className="history-photo" data-reveal><Image src={history} alt="Retrato de João da 5 Irmãos" sizes="(max-width: 700px) 100vw, 42vw" /><span>De Curitiba, com a nossa gente.</span></div>
+        <div className="history-photo" data-reveal><Image src={history} alt="Retrato de João da 5 Irmãos" sizes="(max-width: 700px) 100vw, 42vw"/><span>De Curitiba, com a nossa gente.</span></div>
         <div data-reveal><p className="eyebrow">Quem é João</p><h2>Uma vida perto<br />das pessoas.</h2><p>João Carlos Rodrigues é curitibano, comerciante e vereador de Curitiba licenciado. O nome 5 Irmãos vem do comércio da família, uma história iniciada em 1986.</p><p>Entre o balcão, a comunidade e a Câmara Municipal, sua trajetória se encontra com o cotidiano de quem vive e trabalha nos bairros.</p><p>Em 2026, João pediu licença do cargo de vereador para concorrer a deputado federal pelo Paraná, pelo Movimento Democrático Brasileiro, o MDB.</p><Link className="text-link" href="/quem-e-joao">Conheça a trajetória <ArrowUpRight size={18} /></Link></div>
       </section>
       <section className="work-section"><div className="wrap section">
@@ -77,9 +80,10 @@ export default async function Home() {
         <Link className="text-link instagram-profile-link" href={campaign.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={20} /> Abrir perfil no Instagram <ArrowUpRight size={18} /></Link>
       </div></section>
       <section className="contact-section"><div className="wrap contact-inner" data-reveal><div><p className="eyebrow">Nossos canais</p><h2>Vamos<br />conversar?</h2><p>Novidades, encontros e uma linha direta com a campanha de João da 5 Irmãos.</p></div><div className="contact-links">
-        {campaign.whatsapp ? <a href={campaign.whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle /><span>Entre no grupo de WhatsApp</span><ArrowUpRight /></a> : <a href={campaign.instagram} target="_blank" rel="noopener noreferrer"><MessageCircle /><span>Peça o convite do grupo pelo Instagram</span><ArrowUpRight /></a>}
+        <a href={campaign.whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle /><span>Entrar no grupo de WhatsApp</span><ArrowUpRight /></a>
         <a href={campaign.instagram} target="_blank" rel="noopener noreferrer"><Instagram /><span>Instagram</span><ArrowUpRight /></a><a href={campaign.youtube} target="_blank" rel="noopener noreferrer"><Youtube /><span>YouTube</span><ArrowUpRight /></a>
       </div></div></section>
+      <NewsletterSection />
     </main>
     <SiteFooter />
   </>;

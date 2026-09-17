@@ -23,4 +23,6 @@ Desktop uses a 1200px inner width. Mobile rearranges the portrait and content, s
 
 ## Motion
 
+The newsletter section uses off-white with navy headings to contrast with the navy contact band. Fields have persistent labels, inline errors, visible focus and a disabled sending state. React Hook Form focuses the first invalid field; Zod validation is shared with the server.
+
 Scroll effects have a dedicated source of truth in `docs/ANIMATION_SYSTEM.md`.

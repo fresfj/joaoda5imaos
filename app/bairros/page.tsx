@@ -5,6 +5,7 @@ import { PageShell } from '../../components/page-shell';
 import { actionMedia, neighborhoods } from '../../lib/actions';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/bairros' },
   title: 'Trabalho nos bairros de Curitiba | João da 5 Irmãos',
   description: 'Conheça a presença e as ações de João da 5 Irmãos no Uberaba, Cajuru, Boqueirão, Pinheirinho, Capão da Imbuia e Tarumã, em Curitiba.',
 };

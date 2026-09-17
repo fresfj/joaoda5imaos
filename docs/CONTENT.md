@@ -31,7 +31,15 @@ Reference consulted: https://www.tse.jus.br/legislacao/compilada/res/2019/resolu
 
 ## Channels
 
-`lib/campaign.ts` owns channel URLs. Existing Instagram and YouTube addresses are retained. The official WhatsApp invitation has not been supplied. Configure `NEXT_PUBLIC_WHATSAPP_GROUP_URL` with the official invite; the fallback explicitly asks visitors to request it through Instagram rather than sending them to a generic WhatsApp URL.
+`lib/campaign.ts` owns channel URLs. The user supplied the WhatsApp group invite on 2026-09-17: https://chat.whatsapp.com/Fs78ZbCVEtsG72PbQbAvIo. `NEXT_PUBLIC_WHATSAPP_GROUP_URL` can override it. Header, footer, home and contact page link directly to the group.
+
+## News Registration
+
+Home and contact pages require name, email, Brazilian mobile phone, state, city and explicit consent. Phone displays `(41) 9 9999-0000` and is stored as digits. The user supplied SheetDB API `https://sheetdb.io/api/v1/xmvrrj274efck`. Server-only `SHEETDB_API_URL` can override it and `SHEETDB_AUTHORIZATION` adds authentication. Delivery uses `data: [row]` and `mode: RAW`; success requires `created: 1`.
+
+Required spreadsheet headers (exact spelling): `Nome`, `Email`, `Telefone`, `Estado`, `Cidade`, `Mensagem`, `Consentimento`, `DataConsentimento`, `VersaoPrivacidade`, `Origem`. Keep the spreadsheet private and SheetDB permissions limited to Create (POST); disable public read/search/update/delete. Configure provider-side anti-abuse limits and an operational retention/unsubscribe process. No live personal-data read or test insertion was performed.
+
+On 2026-09-17 a read-only `/keys` request returned `Spreadsheet is empty`: the owner must fill the first row with the required headers. This is the diagnosed cause of failed delivery; no schema or records were modified remotely.
 
 ## Neighborhood Pages
 

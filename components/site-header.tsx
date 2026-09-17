@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
 import { BrandMark } from './brand-mark';
+import { campaign } from '../lib/campaign';
 
 export function SiteHeader() {
   return <header className="site-header">
@@ -14,8 +15,8 @@ export function SiteHeader() {
       <Link href="/acoes">Ações</Link>
       <Link href="/instagram">Instagram</Link>
     </nav>
-    <Link className="button small" href="/contato" title="Vamos conversar">
-      <MessageCircle size={18} /> <span>Vamos conversar</span>
-    </Link>
+    <a className="button small" href={campaign.whatsapp} target="_blank" rel="noopener noreferrer" title="Entrar no grupo de WhatsApp">
+      <MessageCircle size={18} /> <span>Grupo de WhatsApp</span>
+    </a>
   </header>;
 }

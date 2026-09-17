@@ -18,7 +18,7 @@ The application uses Next.js 16 App Router, React 19 and TypeScript. The former 
 - `lib/campaign.ts`: campaign identification and contact configuration.
 - `imgs/`: original campaign assets; static imports provide dimensions to next/image.
 
-Images use Next.js optimization with responsive sizes. Only the hero is preloaded. Other images are lazy-loaded. Gallery videos are served from `public/acoes` and are loaded only after a visitor opens the modal. Google Analytics loads after interaction through `next/script`; no forms are implemented.
+Images use Next.js optimization with responsive sizes. Only the hero is preloaded. Other images are lazy-loaded. Gallery videos are served from `public/acoes` and are loaded only after a visitor opens the modal. Google Analytics loads after hydration through `next/script`. Newsletter forms are isolated Client Components; page content remains server-rendered.
 
 Montserrat (normal and italic) and Inter variable Latin WOFF2 files are dependencies from `@fontsource-variable`, loaded with `next/font/local` in the root layout. The build bundles fonts locally; visitors do not contact Google Fonts. `display: swap` and Next's fallback adjustments limit font-related layout shifts.
 
@@ -30,8 +30,12 @@ Run `npm ci`, then `npm run dev`. Validate with `npm run lint`, `npm run typeche
 
 Import this repository with the Next.js preset, repository root directory, and Node.js 22 or later supported by Vercel. Use `npm run build`; keep the default output directory. No custom vercel.json is needed. Public deployment is not performed by this migration.
 
-Set `NEXT_PUBLIC_WHATSAPP_GROUP_URL` to the real HTTPS group invite before building. Until configured, the page links to Instagram with an explicit request-invite label. This build-time value requires redeployment after changes.
+The supplied WhatsApp invite is the default; `NEXT_PUBLIC_WHATSAPP_GROUP_URL` can override it at build time.
+
+Newsletter client forms post to `/api/cadastro`, which validates required fields, 11-digit mobile phone, consent and origin. It caps streamed bodies at 8 KiB, rejects the honeypot and forwards to SheetDB with RAW input mode and a timeout. Success requires exactly one created row. No personal-data logging or local filesystem storage is used. Optional server-only `SHEETDB_API_URL` overrides the supplied endpoint and `SHEETDB_AUTHORIZATION` adds authentication. Limit SheetDB to Create (POST), configure provider-side rate limits and handle unsubscribe/deletion. Never prefix these variables with `NEXT_PUBLIC_`.
 
 Set `INSTAGRAM_ACCESS_TOKEN` as a server-only Vercel secret to fetch the six latest posts. The token is sent to the Instagram Graph API from the server and is never serialized to the browser. If no token is available, `INSTAGRAM_POST_URLS` can define comma-separated public post URLs. With neither variable, the embedded public profile and direct profile link remain visible. Embedded content loads Instagram's third-party script, which is disclosed in `/privacidade`.
 
 Set `NEXT_PUBLIC_SITE_URL` to the canonical production origin so sitemap and metadata use the deployed domain.
+
+All public pages have self-referencing canonicals. Sitemap includes public routes and neighborhoods without invented modification dates. Robots excludes `/api/`. Optional `GOOGLE_SITE_VERIFICATION` adds Search Console verification metadata.

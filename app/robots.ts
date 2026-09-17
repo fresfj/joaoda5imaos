@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
+import { campaign } from '../lib/campaign';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://joaoda5irmaos.com.br';
-  return { rules: { userAgent: '*', allow: '/' }, sitemap: `${baseUrl}/sitemap.xml` };
+  return { rules: { userAgent: '*', allow: '/', disallow: '/api/' }, sitemap: `${campaign.siteUrl}/sitemap.xml` };
 }

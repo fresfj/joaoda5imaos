@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
+import { campaign } from '../lib/campaign';
 import './globals.css';
 
 const montserrat = localFont({
@@ -19,8 +20,10 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://joaoda5irmaos.com.br'),
-  title: 'João da 5 Irmãos 1599 | Deputado Federal • Paraná',
+  metadataBase: new URL(campaign.siteUrl),
+  title: 'João da 5 Irmãos 1599 | Candidato a deputado federal • Paraná',
+  robots: { index: true, follow: true },
+  verification: { google: process.env.GOOGLE_SITE_VERIFICATION },
   description: 'Conheça João da 5 Irmãos, vereador de Curitiba licenciado e candidato a deputado federal pelo Paraná, MDB 1599.',
   openGraph: { title: 'João da 5 Irmãos • 1599', description: 'Vereador de Curitiba licenciado e candidato a deputado federal pelo Paraná. Acompanhe a campanha.', locale: 'pt_BR', type: 'website' },
 };

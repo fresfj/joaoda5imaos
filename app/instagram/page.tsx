@@ -6,6 +6,7 @@ import { campaign } from '../../lib/campaign';
 import { getInstagramPosts } from '../../lib/instagram';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/instagram' },
   title: 'Instagram e redes sociais | João da 5 Irmãos',
   description: 'Veja as publicações mais recentes do Instagram oficial de João da 5 Irmãos e acompanhe suas ações em Curitiba.',
 };

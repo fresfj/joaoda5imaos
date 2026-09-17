@@ -4,6 +4,7 @@ import { PageShell } from '../../components/page-shell';
 import { actionMedia } from '../../lib/actions';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/acoes' },
   title: 'Ações e atividades | João da 5 Irmãos 1599',
   description: 'Vídeos e fotos das ações de João da 5 Irmãos nos bairros de Curitiba: saúde, obras, horta comunitária e encontros com moradores.',
 };
