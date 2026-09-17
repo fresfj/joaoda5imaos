@@ -2,7 +2,7 @@
 
 The application uses Next.js 16 App Router, React 19 and TypeScript. The former root HTML, CSS and script have been removed; the Next.js application is the sole implementation.
 
-- `app/layout.tsx`: Portuguese document language and SEO metadata.
+- `app/layout.tsx`: Portuguese document language, SEO metadata and Google Analytics tag loading.
 - `app/page.tsx`: statically prerendered home page (Server Component).
 - `app/quem-e-joao`, `app/bairros`, `app/acoes`, `app/instagram` and `app/contato`: indexable pages with friendly URLs.
 - `app/bairros/[bairro]`: statically generated neighborhood detail pages.
@@ -18,7 +18,7 @@ The application uses Next.js 16 App Router, React 19 and TypeScript. The former 
 - `lib/campaign.ts`: campaign identification and contact configuration.
 - `imgs/`: original campaign assets; static imports provide dimensions to next/image.
 
-Images use Next.js optimization with responsive sizes. Only the hero is preloaded. Other images are lazy-loaded. Gallery videos are served from `public/acoes` and are loaded only after a visitor opens the modal. No analytics or forms are implemented.
+Images use Next.js optimization with responsive sizes. Only the hero is preloaded. Other images are lazy-loaded. Gallery videos are served from `public/acoes` and are loaded only after a visitor opens the modal. Google Analytics loads after interaction through `next/script`; no forms are implemented.
 
 Montserrat (normal and italic) and Inter variable Latin WOFF2 files are dependencies from `@fontsource-variable`, loaded with `next/font/local` in the root layout. The build bundles fonts locally; visitors do not contact Google Fonts. `display: swap` and Next's fallback adjustments limit font-related layout shifts.
 

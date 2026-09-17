@@ -4,7 +4,7 @@
 
 - Public name: João da 5 Irmãos.
 - Civil name: João Carlos Rodrigues.
-- Office: Deputado Federal, Paraná.
+- Office: Vereador de Curitiba licenciado; candidate for Deputado Federal, Paraná.
 - Election: 2026.
 - Number: 1599.
 - Party: Movimento Democrático Brasileiro (MDB).
@@ -14,7 +14,7 @@ Preserve Portuguese accents throughout rendered text and metadata. Do not copy a
 
 ## Existing Research Baseline
 
-The earlier research described João as Curitiba-born, a merchant and city councilor, with the family commerce beginning in 1986. It identified Verdura Solidária and Circuito Social Skate. These remain the biographical baseline. The migration removes unsupported neighborhood-specific assertions and speculative policy promises from the earlier page.
+The earlier research described João as Curitiba-born, a merchant and city councilor, with the family commerce beginning in 1986. User guidance on 2026-09-17 clarified that João is a licensed city councilor who stepped away from the office to run for federal deputy in the 2026 elections. It identified Verdura Solidária and Circuito Social Skate. These remain the biographical baseline. The migration removes unsupported neighborhood-specific assertions and speculative policy promises from the earlier page.
 
 - Candidate reference: https://www.gazetadopovo.com.br/eleicoes/2026/candidatos/pr/deputado-federal/joao-da-5-irmaos-mdb-1599/
 - Earlier research also referenced Câmara Municipal de Curitiba profiles; recheck primary records before adding new facts.
@@ -27,7 +27,7 @@ Footer identifies the legal name, office, party, electoral advertising and suppl
 
 Reference consulted: https://www.tse.jus.br/legislacao/compilada/res/2019/resolucao-no-23-607-de-17-de-dezembro-de-2019
 
-`/privacidade` describes the actual implementation, external platforms and possible technical hosting logs. Update it when adding forms, analytics, storage or other data processing.
+`/privacidade` describes the actual implementation, external platforms, Google Analytics tag G-BGTZ6ZYTJE and possible technical hosting logs. Update it when adding forms, storage or other data processing.
 
 ## Channels
 

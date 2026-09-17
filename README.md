@@ -1,6 +1,6 @@
 # joaoda5imaos
 
-Site de campanha de João da 5 Irmãos, candidato a deputado federal pelo Paraná, MDB 1599.
+Site de campanha de João da 5 Irmãos, vereador de Curitiba licenciado e candidato a deputado federal pelo Paraná, MDB 1599.
 
 ## Desenvolvimento
 

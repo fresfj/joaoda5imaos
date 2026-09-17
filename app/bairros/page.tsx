@@ -15,7 +15,7 @@ export default function NeighborhoodsPage() {
     '@type': 'Person',
     name: 'João da 5 Irmãos',
     alternateName: 'João Carlos Rodrigues',
-    jobTitle: 'Vereador de Curitiba e candidato a deputado federal pelo Paraná',
+    jobTitle: 'Vereador de Curitiba licenciado e candidato a deputado federal pelo Paraná',
     sameAs: ['https://www.instagram.com/joaoda5irmaos/', 'https://www.youtube.com/@Joaoda5irmaos'],
     areaServed: neighborhoods.map(({ name }) => ({ '@type': 'Place', name: `${name}, Curitiba, Paraná` })),
   };
