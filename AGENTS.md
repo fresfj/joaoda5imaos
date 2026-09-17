@@ -26,6 +26,7 @@ There is no `RTK.md` in this repository. If one is added later, reconcile it wit
 - Use UTF-8 Portuguese with correct accents, including João, Irmãos and Paraná.
 - Preserve the current campaign identity: navy/orange, Montserrat headings, Inter body. Use the attached MDB artwork without distortion. See `docs/DESIGN_SYSTEM.md` for authoritative tokens.
 - Run `npm run lint`, `npm run typecheck` and `npm run build` before delivery. Verify desktop and mobile views.
+- Before every push, require a successful clean `npm ci` and `npm run verify` for the committed revision. Run `npm run hooks:install` once to enable the pre-push hook. Never bypass the hook or push when a check is blocked or failing.
 - Follow Vercel React practices: minimize client serialization, avoid request waterfalls, clean up subscriptions, and avoid React state updates for each scroll event.
 - Prefer direct Portuguese copy. Avoid generic political filler.
 - Preserve the premium but approachable tone: neighborhood presence, social action, family commerce, and clear contact channels.

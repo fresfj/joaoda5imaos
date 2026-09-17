@@ -28,7 +28,7 @@ Run `npm ci`, then `npm run dev`. Validate with `npm run lint`, `npm run typeche
 
 ## Vercel
 
-Import this repository with the Next.js preset, repository root directory, and Node.js 22 or later supported by Vercel. Use `npm run build`; keep the default output directory. No custom vercel.json is needed. Public deployment is not performed by this migration.
+Import this repository with the Next.js preset and repository root directory. Node is fixed to 22.x in package.json and .nvmrc. vercel.json requires npm ci and npm run verify (lint, typecheck, build), with the default output directory. GitHub Actions runs the same checks with Node 22. Enable the pre-push hook once with npm run hooks:install: every pushed tip is archived and checked in a temporary directory without local dependencies, .env or build cache. Any failure blocks the push; do not bypass the hook.
 
 The supplied WhatsApp invite is the default; `NEXT_PUBLIC_WHATSAPP_GROUP_URL` can override it at build time.
 

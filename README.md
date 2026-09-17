@@ -18,6 +18,8 @@ npm run typecheck
 npm run build
 ```
 
+Use Node 22 (`.nvmrc`). Ative a verificação antes de push com `npm run hooks:install`. O hook testa cada revisão enviada numa pasta temporária, com instalação limpa e `npm run verify` (lint, tipos e build). Se qualquer etapa falhar, o push é bloqueado. O GitHub Actions e a Vercel repetem as verificações; a Vercel instala com `npm ci`.
+
 ## Integrações
 
 - Instagram: configure `INSTAGRAM_ACCESS_TOKEN` para buscar até seis publicações recentes. `INSTAGRAM_POST_URLS` aceita URLs públicas separadas por vírgula como fallback editorial.
