@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR" className={`${montserrat.variable} ${inter.variable}`}><body>
+  return <html lang="pt-BR" className={`${montserrat.variable} ${inter.variable}`} suppressHydrationWarning><body>
     {children}
     <Script src="https://www.googletagmanager.com/gtag/js?id=G-BGTZ6ZYTJE" strategy="afterInteractive" />
     <Script id="google-analytics" strategy="afterInteractive">
